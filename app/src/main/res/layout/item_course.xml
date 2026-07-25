@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="6dp"
+    app:strokeColor="#ECECEC"
+    app:strokeWidth="1dp"
+    android:backgroundTint="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Left Blue Indicator -->
+
+        <View
+            android:id="@+id/indicator"
+            android:layout_width="4dp"
+            android:layout_height="110dp"
+            android:background="#1E5AA8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Main Content -->
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/indicator"
+            app:layout_constraintEnd_toStartOf="@id/tvCredit"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CS-301"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:textColor="#E46A2C"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Data Structures &amp; Algorithms"
+                android:textColor="#111111"
+                android:textSize="20sp"
+                android:fontFamily="@font/dm_seriff_display"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:tint="#8E8E8E"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Dr. Amara Nwosu"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:textColor="#555555"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <!-- Time & Room -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@android:drawable/ic_menu_recent_history"
+                    android:tint="#888888"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Mon"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:textColor="#555555"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  •  "
+                    android:textColor="#AAAAAA"/>
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:tint="#888888"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Tech Hall 204"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:textColor="#555555"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Credit Badge -->
+
+        <TextView
+            android:id="@+id/tvCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_credit"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="4 Cr"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:textColor="#3B82F6"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Buttons -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/contentLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textColor="#312E81"
+                android:textSize="14sp"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:backgroundTint="#BAB6F8"
+
+                app:cornerRadius="24dp"
+
+                app:icon="@drawable/edit"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="14dp"
+                app:iconTint="#312E81"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:textColor="#F60202"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:backgroundTint="#FFC67E"
+
+                app:cornerRadius="24dp"
+                app:icon="@drawable/bin"
+                app:iconGravity="textStart"
+                app:iconPadding="2dp"
+                app:iconSize="14dp"
+                app:iconTint="#F60202"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Details"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:textColor="#D97706"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:backgroundTint="#FAF3C8"
+                android:gravity="center"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+
+                app:cornerRadius="24dp"
+                app:icon="@drawable/img"
+                app:iconGravity="textEnd"
+                app:iconPadding="4dp"
+                app:iconSize="14dp"
+                app:iconTint="#D97706"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
