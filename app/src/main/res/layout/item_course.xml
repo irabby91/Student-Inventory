@@ -70,10 +70,11 @@
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:src="@drawable/instructor"
                     android:tint="#8E8E8E"/>
 
                 <TextView
+                    android:id="@+id/tvTeacher"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -99,10 +100,12 @@
                     android:tint="#888888"/>
 
                 <TextView
+                    android:id="@+id/tvTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:text="Mon"
+                    android:textSize="14sp"
                     android:fontFamily="@font/plus_jakarta_sans"
                     android:textColor="#555555"/>
 
@@ -115,14 +118,16 @@
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:src="@drawable/home"
                     android:tint="#888888"/>
 
                 <TextView
+                    android:id="@+id/tvRoom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:text="Tech Hall 204"
+                    android:textSize="15sp"
                     android:fontFamily="@font/plus_jakarta_sans"
                     android:textColor="#555555"/>
 
@@ -161,6 +166,7 @@
             >
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEdit"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_marginEnd="8dp"
@@ -181,6 +187,7 @@
                 app:iconTint="#312E81"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_marginEnd="8dp"
@@ -200,12 +207,13 @@
                 app:iconTint="#F60202"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDetails"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="Details"
                 android:textAllCaps="false"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="#D97706"
                 android:fontFamily="@font/plus_jakarta_sans"
                 android:backgroundTint="#FAF3C8"

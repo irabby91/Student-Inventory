@@ -6,4 +6,28 @@
     </style>
 
     <style name="Theme.StudentInventory" parent="Base.Theme.StudentInventory" />
+
+    <style name="LabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/plus_jakarta_sans</item>
+        <item name="android:textColor">#7C7EA1</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="InputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/bg_input_field</item>
+        <item name="android:fontFamily">@font/plus_jakarta_sans</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textColor">#1A1C3D</item>
+        <item name="android:textColorHint">#BDBCEE</item>
+        <item name="android:textSize">15sp</item>
+    </style>
 </resources>

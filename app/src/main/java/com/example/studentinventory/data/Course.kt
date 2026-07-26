@@ -10,7 +10,9 @@ data class Course(
     val courseName: String,
     val courseCode: String,
     val credits: Int,
-    val courseTeacher: String
+    val courseTeacher: String,
+    val courseTime: String,
+    val courseRoom: String
 )
 
 

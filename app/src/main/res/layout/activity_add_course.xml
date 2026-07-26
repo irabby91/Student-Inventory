@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".viewModel.AddCourseActivity">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_header"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            app:cardBackgroundColor="#22FFFFFF"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@android:color/white"
+                android:contentDescription="Back" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtNewEnrollment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:letterSpacing="0.15"
+            android:text="NEW ENROLLMENT"
+            android:textColor="#C5C4FF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+        <TextView
+            android:id="@+id/txtAddCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dm_seriff_display"
+            android:text="Add Course"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toStartOf="@id/txtNewEnrollment"
+            app:layout_constraintTop_toBottomOf="@id/txtNewEnrollment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Form Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:background="@drawable/bg_credit"
+        android:backgroundTint="#FAFBFF"
+        app:layout_constraintBottom_toTopOf="@id/saveButtonLayout"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <!-- COURSE NAME -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/book"
+                    app:tint="#7C7EA1"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="COURSE NAME"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etCourseName"
+                style="@style/InputStyle"
+                android:hint="e.g. Data Structures"
+                android:inputType="textCapWords" />
+
+            <!-- COURSE CODE -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/more"
+                    app:tint="#7C7EA1"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="COURSE CODE"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etCourseCode"
+                style="@style/InputStyle"
+                android:hint="e.g. CS-301"
+                android:inputType="textCapCharacters" />
+
+            <!-- INSTRUCTOR -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/instructor"
+                    app:tint="#7C7EA1"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="INSTRUCTOR"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etInstructor"
+                style="@style/InputStyle"
+                android:hint="e.g. Dr. Amara Nwosu"
+                android:inputType="textPersonName" />
+
+            <!-- CREDITS -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/star"
+                    app:tint="#7C7EA1"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="CREDITS"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etCredits"
+                style="@style/InputStyle"
+                android:hint="e.g. 3"
+                android:inputType="number" />
+
+            <!-- SCHEDULE -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/clock"
+                    app:tint="#7C7EA1"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="SCHEDULE"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etSchedule"
+                style="@style/InputStyle"
+                android:hint="e.g. Mon/Wed 10-11:30 AM"
+                android:inputType="text" />
+
+            <!-- ROOM -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/home"
+                    app:tint="#7C7EA1"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="ROOM"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etRoom"
+                style="@style/InputStyle"
+                android:hint="e.g. Tech Hall 204"
+                android:inputType="text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Save Button Container -->
+    <FrameLayout
+        android:id="@+id/saveButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@drawable/bg_button"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:text="Save Course"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

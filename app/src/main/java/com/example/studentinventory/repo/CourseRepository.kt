@@ -7,6 +7,8 @@ import kotlinx.coroutines.flow.Flow
 class CourseRepository(private val courseDao: CourseDao) {
     fun getAllCoursesStream(): Flow<List<Course>> = courseDao.getAllCourses()
 
+    fun searchCourses(query: String): Flow<List<Course>> = courseDao.searchCourses(query)
+
     fun getCourseStream(id: Int): Flow<Course?> = courseDao.getCourse(id)
 
     suspend fun insertCourse(course: Course) = courseDao.insert(course)
