@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<android.view.View>(R.id.btnGetStarted)?.setOnClickListener {
-            val intent = android.content.Intent(this, HomeScreen::class.java)
+            val intent = android.content.Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
     }

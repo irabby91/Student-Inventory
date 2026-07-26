@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF"
+    tools:context=".viewModel.SignInActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Purple Header -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="H,1:0.75">
+
+            <!-- Decorative Circles -->
+            <View
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_circle_big"
+                android:alpha=".08"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="-40dp"/>
+
+            <View
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:background="@drawable/bg_circle_big"
+                android:alpha=".05"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="-80dp"
+                android:layout_marginStart="-80dp"/>
+
+            <!-- Icon -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iconContainer"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#22FFFFFF"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/txtWelcome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/graduate"
+                    app:tint="@android:color/white"
+                    android:contentDescription="App Icon"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back"
+                android:textColor="@android:color/white"
+                android:textSize="32sp"
+                android:fontFamily="@font/dm_seriff_display"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/iconContainer"
+                app:layout_constraintBottom_toTopOf="@id/txtSubtitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STUDENT ENROLLMENT"
+                android:textColor="#C5C4FF"
+                android:textSize="12sp"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:letterSpacing=".15"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Form Section -->
+        <LinearLayout
+            android:id="@+id/formLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:textColor="#1A1C3D"
+                android:textSize="24sp"
+                android:fontFamily="@font/dm_seriff_display"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your credentials to continue"
+                android:textColor="#7C7EA1"
+                android:textSize="14sp"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Email -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@android:drawable/ic_dialog_email"
+                    app:tint="#7C7EA1"
+                    android:contentDescription="Email Icon"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="EMAIL ADDRESS"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/InputStyle"
+                android:hint="student@westbrook.edu"
+                android:inputType="textEmailAddress"
+                android:importantForAutofill="no" />
+
+            <!-- Password -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@android:drawable/ic_lock_idle_lock"
+                    app:tint="#7C7EA1"
+                    android:contentDescription="Password Icon"/>
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="PASSWORD"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/InputStyle"
+                android:hint="••••••••"
+                android:inputType="textPassword"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/txtForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="12dp"
+                android:text="Forgot password?"
+                android:textColor="#5E5CE6"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/plus_jakarta_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bg_button"
+                android:fontFamily="@font/plus_jakarta_sans"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't have an account? "
+                    android:textColor="#7C7EA1"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/plus_jakarta_sans"/>
+                <TextView
+                    android:id="@+id/txtSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Up"
+                    android:textColor="#5E5CE6"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta_sans"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

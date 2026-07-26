@@ -51,6 +51,11 @@ class HomeScreen : AppCompatActivity() {
             val intent = Intent(this, AddCourseActivity::class.java)
             startActivity(intent)
         }
+
+        findViewById<android.view.View>(R.id.btnProfile)?.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupRecyclerView() {

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".viewModel.ProfileActivity">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            app:cardBackgroundColor="#22FFFFFF"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@android:color/white"
+                android:contentDescription="Back" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtProfileTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:letterSpacing="0.15"
+            android:text="MY PROFILE"
+            android:textColor="#C5C4FF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+        <!-- Profile Avatar -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/avatarContainer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#33FFFFFF"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtProfileTitle">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/instructor"
+                app:tint="@android:color/white"
+                android:contentDescription="User Avatar" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/dm_seriff_display"
+            android:text="John Doe"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avatarContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Info Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FAFBFF"
+        android:orientation="vertical"
+        android:padding="28dp"
+        app:layout_constraintBottom_toTopOf="@id/logoutButtonLayout"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EMAIL ADDRESS"
+                    android:textColor="#7C7EA1"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:letterSpacing="0.1"/>
+
+                <TextView
+                    android:id="@+id/tvUserEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="student@westbrook.edu"
+                    android:textColor="#1A1C3D"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/plus_jakarta_sans" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#F0F1F7"
+                    android:layout_marginVertical="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UNIVERSITY"
+                    android:textColor="#7C7EA1"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta_sans"
+                    android:letterSpacing="0.1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Westbrook University"
+                    android:textColor="#1A1C3D"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/plus_jakarta_sans" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <!-- Logout Button Container -->
+    <FrameLayout
+        android:id="@+id/logoutButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="#FFF0F0"
+            android:fontFamily="@font/plus_jakarta_sans"
+            android:text="Log Out"
+            android:textAllCaps="false"
+            android:textColor="#FF4D4D"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
